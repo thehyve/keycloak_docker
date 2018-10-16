@@ -3,7 +3,7 @@ class keycloak-docker::params (
   String $keycloak_user == lookup('keycloak-docker::keycloak_user', String, first, ''),
   String $keycloak_password == lookup('keycloak-docker::keycloak_password', String, first, ''),
   String $keycloak_fqdn == lookup('keycloak-docker::keycloak_fqdn', String, first, ''),
-  String $docker_compose_file_path = lookup('transmart_packer::docker_compose_file_path', String, first, '/tmp/docker-compose.yml'),
+  String $docker_compose_file_path = lookup('keycloak-docker::docker_compose_file_path', String, first, '/tmp/docker-compose.yml'),
 ) {
   if $db_password == '' {
     fail('No database password specified. Please configure keycloak-docker::db_password')
