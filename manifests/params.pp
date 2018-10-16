@@ -1,4 +1,4 @@
-ctransmart_packerlass keycloak_docker::params (
+class keycloak_docker::params (
   String $db_password = lookup('keycloak_docker::db_password', String, first, ''),
   String $keycloak_user = lookup('keycloak_docker::keycloak_user', String, first, ''),
   String $keycloak_password = lookup('keycloak_docker::keycloak_password', String, first, ''),
