@@ -1,6 +1,6 @@
-class keycloak-docker inherits keycloak-docker::params {
-  file { $docker-compose_file_path:
+class keycloak_docker inherits keycloak_docker::params {
+  file { $docker_compose_file_path:
     ensure => file,
-    content => template('keycloak-docker/docker-compose.yml.erb'),
+    content => template('keycloak_docker/docker-compose.yml.erb'),
   }
 }
