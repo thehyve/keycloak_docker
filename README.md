@@ -22,4 +22,6 @@ Parameters:
 
 To backup keycloak you need to backup database:
 
-`$ sudo docker exec -it -u postgres $(sudo docker ps -f ancestor=postgres -q) pg_dump -U keycloak keycloak > keycloak.sql`
+```
+$ sudo docker exec -it -u postgres $(sudo docker ps -f ancestor=postgres -q) pg_dump -U keycloak keycloak > keycloak.sql
+```
