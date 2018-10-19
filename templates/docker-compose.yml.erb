@@ -4,7 +4,7 @@ volumes:
     driver: local
 services:
   postgres:
-    image: postgres:'<%= @postgresql_version %>'
+    image: postgres:<%= @postgresql_version %>
     volumes:
     - postgres_data:/var/lib/postgresql/data
     environment:
@@ -12,7 +12,7 @@ services:
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: '<%= @db_password %>'
   keycloak:
-    image: jboss/keycloak:'<%= @keycloak_version %>'
+    image: jboss/keycloak:<%= @keycloak_version %>
     environment:
       DB_VENDOR: POSTGRES
       DB_ADDR: postgres
