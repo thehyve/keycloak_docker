@@ -7,7 +7,7 @@ class keycloak_docker inherits keycloak_docker::params {
     ensure => file,
     content => template('keycloak_docker/docker-compose.yml.erb'),
   } ~> docker_compose { "$docker_compose_file_path":
-    compose_files => [ /${docker_compose_file_path}/docker-compose.yml ],
+    compose_files => [ "/${docker_compose_file_path}/docker-compose.yml" ],
     ensure => present,
   }
 }
