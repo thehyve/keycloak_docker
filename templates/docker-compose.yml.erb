@@ -8,9 +8,10 @@ services:
     volumes:
     - postgres_data:<%= @postgresql_data %>:Z
     environment:
-      POSTGRESQL_DATABASE: keycloak
-      POSTGRESQL_USER: keycloak
-      POSTGRESQL_PASSWORD: '<%= @db_password %>'
+      PGDATA: '<%= @postgresql_data %>'
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: '<%= @db_password %>'
   keycloak:
     image: jboss/keycloak:<%= @keycloak_version %>
     environment:
