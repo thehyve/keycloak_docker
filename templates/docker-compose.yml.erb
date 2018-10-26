@@ -8,7 +8,6 @@ services:
     volumes:
     - postgres_data:<%= @postgresql_data %>:Z
     environment:
-      PGDATA: '<%= @postgresql_data %>'
       POSTGRES_DB: keycloak
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: '<%= @db_password %>'

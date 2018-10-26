@@ -6,7 +6,7 @@ class keycloak_docker::params (
   String $docker_compose_file_path = lookup('keycloak_docker::docker_compose_file_path', String, first, 'tmp'),
   String $keycloak_version = lookup('keycloak_docker::keycloak_version', String, first, 'latest'),
   String $postgresql_version = lookup('keycloak_docker::postgresql_version', String, first, 'latest'),
-  String $postgresql_data = lookup('keycloak_docker::postgresql_data', String, first, '/var/lib/postgresql/data/pgdata'),
+  String $postgresql_data = lookup('keycloak_docker::postgresql_data', String, first, '/var/lib/postgresql/data'),
 ) {
   if $db_password == '' {
     fail('No database password specified. Please configure keycloak_docker::db_password')
