@@ -6,7 +6,7 @@ services:
   postgres:
     image: postgres:<%= @postgresql_version %>
     volumes:
-    - postgres_data:/var/lib/pgsql/data:Z
+    - postgres_data:<%= @postgresql_data %>:Z
     environment:
       POSTGRESQL_DATABASE: keycloak
       POSTGRESQL_USER: keycloak
